@@ -1,0 +1,145 @@
+==============================================================================
+                    HOW TO UPDATE YOUR PORTFOLIO WEBSITE
+                     Guide for Priyam Kumar (Next.js)
+==============================================================================
+
+Table of Contents:
+  1. How to Add New Projects (Auto-appears on Desktop & Portfolio Window)
+  2. How to Update Tech Stack & Skills
+  3. How to Add Experience & Certifications
+  4. How to Update Your Resume PDF
+  5. How to Change Profile Photo (DP) & Desktop Wallpaper
+  6. How to Update AI Chatbot Information
+  7. How to Run & Test Your Website Locally
+
+------------------------------------------------------------------------------
+1. HOW TO ADD NEW PROJECTS
+------------------------------------------------------------------------------
+File to edit: components/Portfolio.tsx
+
+Open `components/Portfolio.tsx` and find `export const PROJECTS: Project[] = [`.
+Uncomment the array and add your project objects like this:
+
+export const PROJECTS: Project[] = [
+  {
+    id: 1,
+    icon: "🌐", // Or path to an icon image: "/images/myicon.png"
+    name: "My Awesome Project",
+    description: "Built a full stack platform with Spring Boot and React.",
+    techs: ["Java", "Spring Boot", "React.js", "MongoDB", "REST APIs"],
+    github: "https://github.com/Codewithpriyam/my-awesome-project",
+    live: "https://my-awesome-project.vercel.app/",
+  },
+  {
+    id: 2,
+    icon: "⚡",
+    name: "E-Commerce Backend API",
+    description: "Scalable REST APIs for order management and user authentication.",
+    techs: ["Java", "Spring Boot", "MySQL", "Postman"],
+    github: "https://github.com/Codewithpriyam/ecommerce-backend",
+    live: "https://api.myproject.com",
+  }
+];
+
+✨ AUTOMATIC FEATURES:
+  - The project will AUTOMATICALLY appear as a desktop shortcut icon on your main screen!
+  - Clicking the desktop shortcut will open your project's live URL (or GitHub repo).
+  - The project will AUTOMATICALLY render as a card in your Portfolio window.
+
+
+------------------------------------------------------------------------------
+2. HOW TO UPDATE TECH STACK & SKILLS
+------------------------------------------------------------------------------
+Skills are displayed in 3 places:
+
+A. Portfolio Window Tags:
+   File: components/Portfolio.tsx
+   Find line ~260 in `Portfolio.tsx` under `{/* Tags (macOS rounded pills) */}`:
+
+   {["Java", "Spring Boot", "React.js", "REST APIs", "MongoDB", "MySQL", "Postman", "Your New Skill"].map(...)
+
+B. Terminal Window Tech Stack:
+   File: components/TerminalWindow.tsx
+   Find `<tbody>` and edit or add table rows:
+
+   <tr>
+     <td className={styles.category}><span className={styles.check}>✓</span> Language</td>
+     <td>Java, JavaScript</td>
+   </tr>
+
+C. AI Chatbot Memory:
+   File: app/api/chat/route.ts
+   Find `#Skills:` and add your new skill to the list so AI can answer visitors about it.
+
+
+------------------------------------------------------------------------------
+3. HOW TO ADD EXPERIENCE & CERTIFICATIONS
+------------------------------------------------------------------------------
+File to edit: components/Portfolio.tsx
+
+Find `const EXPERIENCE: Experience[] = [];` in `components/Portfolio.tsx`.
+Add your work experience, hackathons, or certifications like this:
+
+const EXPERIENCE: Experience[] = [
+  {
+    company: "AWS Certified Developer",
+    role: "Amazon Web Services Certification",
+    period: "2026",
+    location: "Online · Certified",
+    badge: "active",
+  },
+  {
+    company: "Tech Storm '26",
+    role: "Hackathon Lead Coordinator",
+    period: "2026",
+    location: "Kolkata, India",
+    badge: "active",
+  }
+];
+
+
+------------------------------------------------------------------------------
+4. HOW TO UPDATE YOUR RESUME PDF
+------------------------------------------------------------------------------
+File location: public/files/resume.pdf
+
+1. Simply copy your updated resume PDF file into the `public/files/` folder.
+2. Ensure the filename is named exactly `resume.pdf`.
+3. Clicking "Resume.pdf" on the desktop or "Resume" in the top navigation bar will instantly open your new PDF!
+
+
+------------------------------------------------------------------------------
+5. HOW TO CHANGE PROFILE PHOTO (DP) & DESKTOP WALLPAPER
+------------------------------------------------------------------------------
+A. Profile Picture (DP):
+   Location: public/images/dp.jpeg
+   - Replace `public/images/dp.jpeg` with your new photo (keep name as `dp.jpeg`).
+
+B. Desktop Wallpaper:
+   Location: public/images/wallpaper.png
+   - Replace `public/images/wallpaper.png` with any wallpaper image of your choice.
+
+
+------------------------------------------------------------------------------
+6. HOW TO UPDATE AI CHATBOT INFORMATION
+------------------------------------------------------------------------------
+File to edit: app/api/chat/route.ts
+
+Edit the `systemPrompt` variable in `app/api/chat/route.ts` to update your bio, links, skills, or answers that the Ask AI Assistant uses when answering questions.
+
+
+------------------------------------------------------------------------------
+7. HOW TO RUN & TEST YOUR WEBSITE LOCALLY
+------------------------------------------------------------------------------
+Open PowerShell / Terminal in your project folder (`c:\Users\acer\Desktop\portfolio`):
+
+Command to start dev server:
+  $env:Path += ";C:\Program Files\nodejs"
+  npm run dev
+
+Open your browser at: http://localhost:3000/
+
+Command to build for production:
+  $env:Path += ";C:\Program Files\nodejs"
+  npm run build
+==============================================================================
