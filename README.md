@@ -107,7 +107,7 @@ export const PROJECTS: Project[] = [
 
 - **GitHub**: [@Codewithpriyam](https://github.com/Codewithpriyam)
 - **LinkedIn**: [Priyam Kumar](https://www.linkedin.com/in/priyam-kumar-5057a123b/)
-- **LeetCode**: [priyamsihh8q](https://leetcode.com/u/priyamsihh8q/)
+- **LeetCode**: [Hyperscout](https://leetcode.com/u/Hyperscout/)
 - **Email**: Priyamsingh504@gmail.com
 - **Phone**: +91 8873932040
 

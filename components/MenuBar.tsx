@@ -6,10 +6,11 @@ import { useState, useEffect } from 'react';
 
 interface MenuBarProps {
   onOpenPortfolio?: () => void;
+  onOpenProjects?: () => void;
   onOpenContact?: () => void;
 }
 
-export default function MenuBar({ onOpenPortfolio, onOpenContact }: MenuBarProps) {
+export default function MenuBar({ onOpenPortfolio, onOpenProjects, onOpenContact }: MenuBarProps) {
   const [timeString, setTimeString] = useState<string>('');
 
   useEffect(() => {
@@ -42,6 +43,7 @@ export default function MenuBar({ onOpenPortfolio, onOpenContact }: MenuBarProps
           <Image src="/images/logo.svg" alt="Apple" width={19} height={19} />
         </span>
         <span className={styles.brand} onClick={onOpenPortfolio}><h4>Priyam's Portfolio</h4></span>
+        <span className={styles.menuItem} onClick={onOpenProjects}>Projects</span>
         <span className={styles.menuItem} onClick={onOpenContact}>Contact</span>
         <span className={styles.menuItem} onClick={() => {
           const a = document.createElement('a');

@@ -60,6 +60,13 @@ export default function Home() {
       <div className="hidden md:block">
         <MenuBar
           onOpenPortfolio={() => setIsPortfolioOpen(true)}
+          onOpenProjects={() => {
+            setIsPortfolioOpen(true);
+            setTimeout(() => {
+              const el = document.getElementById('projects');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+          }}
           onOpenContact={() => setIsContactOpen(true)}
         />
       </div>

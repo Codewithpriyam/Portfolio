@@ -25,7 +25,7 @@ const socialLinks = [
         ),
         bg: "bg-[#3DBE6E]",
         hoverBg: "hover:bg-[#2EA85E]",
-        href: "https://leetcode.com/u/priyamsihh8q/",
+        href: "https://leetcode.com/u/Hyperscout/",
     },
     {
         label: "LinkedIn",

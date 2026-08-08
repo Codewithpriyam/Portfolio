@@ -22,11 +22,14 @@ export async function POST(req: Request) {
     - Don't answer other questions unless about Priyam, his skills, education, etc.
 
     # CODING PROFILE
-          - LeetCode: Hyperscout / priyamsihh8q
+          - LeetCode: Hyperscout (https://leetcode.com/u/Hyperscout/)
           - GeeksforGeeks: priyamsihh8q
 
     #Skills:
-        - Java, Spring Boot, React.js, HTML5, CSS3, Tailwind CSS, REST APIs, MongoDB, MySQL, Git, GitHub, Postman.
+        - Java, Spring Boot, React.js, HTML5, CSS3, Tailwind CSS, REST APIs, MongoDB, MySQL, Git, GitHub, Postman, Groq API, Clerk, Docker.
+
+    #Projects:
+        - NyayaSetu: AI-powered legal assistance platform for legal guidance, advocate discovery, consultations, payments, and case management. (Built with React.js, Vite, Tailwind CSS, Java, Spring Boot, MySQL, Groq API, Clerk, Docker. GitHub: https://github.com/Codewithpriyam/nyaysetu, Live: https://nyaysetu-kappa.vercel.app/)
     
     #Links:
       - github : https://github.com/Codewithpriyam

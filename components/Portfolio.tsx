@@ -23,19 +23,27 @@ interface Experience {
 
 // ─── Data — edit this section ────────────────────────────────────────────────
 
-// Projects are commented out for now. Uncomment and fill in details when your live projects are ready!
 export const PROJECTS: Project[] = [
-  /*
   {
-      id: 1,
-      icon: "🌐",
-      name: "My Project Name",
-      description: "Brief description of your project.",
-      techs: ["Java", "Spring Boot", "React.js", "MySQL"],
-      github: "https://github.com/Codewithpriyam/my-project",
-      live: "https://myproject.com",
+    id: 1,
+    icon: "⚖️",
+    name: "NyayaSetu",
+    description:
+      "AI-powered legal assistance platform that helps users understand legal issues, discover advocates, book consultations, manage payments, and track legal cases.",
+    techs: [
+      "React.js",
+      "Vite",
+      "Tailwind CSS",
+      "Java",
+      "Spring Boot",
+      "MySQL",
+      "Groq API",
+      "Clerk",
+      "Docker"
+    ],
+    github: "https://github.com/Codewithpriyam/nyaysetu",
+    live: "https://nyaysetu-kappa.vercel.app/",
   },
-  */
 ];
 
 const EXPERIENCE: Experience[] = [];
