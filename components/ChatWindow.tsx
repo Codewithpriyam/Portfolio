@@ -31,6 +31,10 @@ export default function ChatWindow({ onClose }: { onClose?: () => void }) {
                 body: JSON.stringify({ message: msg, history: messages.map(m => ({ role: m.role, content: m.content })) }),
             });
 
+            if (!res.ok) {
+                throw new Error(`Server returned status ${res.status}`);
+            }
+
             if (!res.body) throw new Error("No response body");
 
             const reader = res.body.getReader();
@@ -53,6 +57,10 @@ export default function ChatWindow({ onClose }: { onClose?: () => void }) {
         } catch (e) {
             console.error(e);
             setIsLoading(false);
+            setMessages((prev) => [
+                ...prev,
+                { role: "assistant", content: "Sorry, I couldn't process your request right now. Please try again." }
+            ]);
         }
     };
 

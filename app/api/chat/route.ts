@@ -4,6 +4,7 @@ import client from '@/utils/groqClient';
 export async function POST(req: Request) {
   try {
     const { message, history } = await req.json();
+    const safeHistory = Array.isArray(history) ? history : [];
 
     const systemPrompt = `
     #ROLE
@@ -20,6 +21,7 @@ export async function POST(req: Request) {
     - Keep answers short (1-3 sentences).
     - Answer professional.
     - Don't answer other questions unless about Priyam, his skills, education, etc.
+    - Do NOT use markdown bold formatting, asterisks (**), or special hyphens/gaps in phone numbers. Output clean plain text only.
 
     # CODING PROFILE
           - LeetCode: Hyperscout (https://leetcode.com/u/Hyperscout/)
@@ -40,13 +42,13 @@ export async function POST(req: Request) {
 
     const messages = [
       { role: 'system', content: systemPrompt },
-      ...history,
+      ...safeHistory,
       { role: 'user', content: message }
     ];
 
     const chatCompletion = await client.chat.completions.create({
       messages: messages,
-      model: 'llama-3.3-70b-versatile',
+      model: 'groq/compound-mini',
       stream: true,
     });
 
